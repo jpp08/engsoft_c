@@ -1,2 +1,4 @@
 # engsoft_c
-Exercícios C/C++ para Engenharia de Software
+Exercícios C/C++ para curso Engenharia de Software da Unicesumar
+
+
