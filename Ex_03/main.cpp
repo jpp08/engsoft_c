@@ -13,8 +13,10 @@ f.	incrementar o ponteiro, mostrando o conteúdo do endereço apontado (em forma
 #include "stdio.h"
 
 int a, b, c, d;
-float e, f, g, h;
-char v[10];
+
+// Apesar do enunciado, não faz sentido estas variáveis abaixo
+//float e, f, g, h;
+//char v[10];
 int x;
 
 int *ponteiro_a;
@@ -25,10 +27,10 @@ int main()
     b = 2;
     c = 3;
     d = 4;
-    e = 0.1;
+    /*  e = 0.1;
     f = 0.2;
     g = 0.3;
-    h = 0.5;
+    h = 0.5;*/
 
     printf("a = %d\n", a);
     ponteiro_a = &a;
@@ -37,6 +39,7 @@ int main()
     printf("Ponteiro incrementado = %p\n", ponteiro_a);
     printf("Valor da variável posicionada no ponteiro: %d", *ponteiro_a);
 
+    // Variável usada apenas para mostrar a alteração de posição em relação as variáveis declaradas
     char variavel;
     variavel = ' ';
     if (ponteiro_a == &b)
@@ -55,7 +58,9 @@ int main()
     if (variavel != ' ')
     {
         printf("Ponteiro aponta agora para %c\n", variavel);
-    } else {
+    }
+    else
+    {
         printf("O ponteiro não mudou de posição\n");
         // Esse bloco nunca vai ser executado
     }
