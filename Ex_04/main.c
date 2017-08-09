@@ -23,7 +23,7 @@ struct score
 };
 
 // vetor de scores com um elemento a mais para fazer a inserção
-struct score scores[numeroScores + 1]; 
+struct score scores[numeroScores + 1];
 
 // Método para carregar os dados já armazenados no arquivo texto
 void Carregar()
@@ -105,7 +105,7 @@ void Ordenar()
 		{
 			if (scores[i].pontuacao < scores[j].pontuacao)
 			{
-				Trocar(i, j);				
+				Trocar(i, j);
 			}
 		}
 	}
@@ -113,7 +113,7 @@ void Ordenar()
 
 // Função para inserir os dados do usuário no vetor de dados
 // Retorna 0 se o usuário não desejar mais informar dados
-int DadosUsuario()
+int InformarDadosUsuario()
 {
 	char nome[10];
 	printf("Nome  (0 para sair):");
@@ -125,10 +125,31 @@ int DadosUsuario()
 	int pontuacao = 0;
 	printf("Pontuacao: ");
 	scanf("%d", &pontuacao);
-	// Aqui está o pulo do gato. O vetor é definido com um elemento a mais.
-	// Este último elemento é usado para se colocar o novo dado que o usuário informou.
-	strncpy(scores[numeroScores].nome, nome, tamanhoNome);
-	scores[numeroScores].pontuacao = pontuacao;	
+	// Verifica se o nome já foi informado
+	int i = 0, encontrou = 0;
+	while (i < numeroScores && encontrou == 0)
+	{
+		if (strcmp(scores[i].nome, nome) == 0) 
+		{
+			// Se o nome foi encontrado no vetor, i vai ser o índice
+			encontrou = 1;
+		}
+		else
+		{
+			// Incrementa i, percorrendo o vetor
+			i++;
+		}
+	}
+	if (!encontrou)
+	{		
+		// Se não encontrou, vai ser colocado no último elemento do vetor
+		// Aqui está o pulo do gato. O vetor é definido com um elemento a mais.
+		// Este último elemento é usado para se colocar o novo dado que o usuário informou.
+		i = numeroScores;
+	}
+
+	strncpy(scores[i].nome, nome, tamanhoNome);
+	scores[i].pontuacao = pontuacao;
 	Ordenar();
 	return 1;
 }
@@ -136,12 +157,13 @@ int DadosUsuario()
 int main(int argc, char *argv[])
 {
 	int continua = 1;
+	Carregar();
+	Ordenar();
+	Mostrar();
 	do
 	{
-		Carregar();
-		Ordenar();
-		Mostrar();
-		if (DadosUsuario())
+
+		if (InformarDadosUsuario())
 		{
 			Mostrar();
 			Gravar();
