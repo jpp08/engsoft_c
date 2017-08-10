@@ -39,3 +39,17 @@ Implementar um programa de gerenciamento de high scores. O programa deve:
 1.	carregar os high scores de um arquivo e mostrar. Cada high score é composto de um nome (max. 10 caracteres) e um inteiro (pontuação)
 2.	pedir ao usuário o seu nome e a sua pontuaçãoo no jogo. 
 3.	posicionar os dados do usuário na tabela de highest scores (max. 5) e regravar no arquivo.
+
+## Problema 05
+
+Exercício 05 - Recursão e performance
+
+1. Escreva um programa em C para calcular a SOMA de números de 1 até N.
+2. O número deve ser informado pelo usuário e deve ser validado dentro da variação 1 a 100000.
+3. Se o número não for válido, deve ser apresentada uma mensagem ao usuário e sair do programa.
+4. Crie uma função para efetuar o cálculo usando um laço de repetição simples.
+5. Crie uma função para efetuar o cálculo usando recursão.
+6. Efetue o cálculo com as duas funções, registrando o tempo de execução de cada função.
+7. Apresente o valor da soma
+8. Apresente o tempo de execução de cada função.
+
