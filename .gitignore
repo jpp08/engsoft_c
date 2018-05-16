@@ -6,3 +6,4 @@ main
 *.layout
 Makefile.win
 settings.json
+*.o
