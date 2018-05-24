@@ -20,3 +20,7 @@ Dica: uma parte do programa 2.5 do livro de estudo (páginas 44-48) com alguns a
 * Envie o código fonte da atividade compactado .zip ou .rar.
 
 Demais orientações poderão ser feitas durante as aulas ao vivo, por isso, fique atento!
+
+## Retorno da aplicação
+
+![console](https://github.com/guionardo/engsoft_c/blob/master/ED_2/captura_tela.JPG)
