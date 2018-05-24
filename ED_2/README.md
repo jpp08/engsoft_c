@@ -8,6 +8,7 @@ Este tipo de estrutura é muito utilizado em operações como: organizar os arqu
 
 Baseado no conteúdo do nosso livro de estudo e nas aulas ao vivo, elabore um programa em linguagem C que faça a leitura da árvore binária abaixo, executando as expressões aritméticas e imprimindo na tela o resultado do cálculo efetuado. Vale ressaltar que o resultado da expressão da árvore abaixo é o valor 20.
 
+![mapa](https://github.com/guionardo/engsoft_c/blob/master/ED_2/QUE_33524_138964_1.jpg)
 
 Dica: uma parte do programa 2.5 do livro de estudo (páginas 44-48) com alguns ajustes pode ser utilizado para realizar a atividade. Veja também a aula conceitual 8 na qual é falado sobre o caminhamento em árvores binárias.
 
