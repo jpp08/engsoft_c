@@ -21,6 +21,14 @@ Dica: uma parte do programa 2.5 do livro de estudo (páginas 44-48) com alguns a
 
 Demais orientações poderão ser feitas durante as aulas ao vivo, por isso, fique atento!
 
+## AVISO DO AUTOR
+
+ATENÇÃO AO USAR ESTE PROGRAMA COMO MODELO PARA SUA ATIVIDADE!!!
+
+O modelo que é dado como exemplo no livro de estudo, usa VETORES para o processamento da árvore binária.
+
+Escolhi usar ponteiros (lista ligada), por supor que é uma solução mais elegante e que dá mais flexibilidade caso os dados da árvore binária sejam alterados.
+
 ## Retorno da aplicação
 
 ![console](https://github.com/guionardo/engsoft_c/blob/master/ED_2/captura_tela.JPG)
