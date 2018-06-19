@@ -3,6 +3,7 @@
 #include <time.h>
 #include <locale.h>
 #include <string.h>
+#include <sys/time.h>
 
 #define qtdNumeros 20
 
@@ -11,6 +12,22 @@ int vetorinicial[qtdNumeros];
 int ordenado = 0;
 char forma[10];
 int qtd;
+long nanoSecs =0 ;
+
+struct timespec watch; // Registro de cronômetro
+
+void startWatch()
+{
+	nanoSecs=0;
+	clock_gettime(CLOCK_MONOTONIC, &watch);
+}
+
+void stopWatch()
+{
+	struct timespec w2;
+	clock_gettime(CLOCK_MONOTONIC, &w2);
+	nanoSecs = w2.tv_nsec;	
+}
 
 void inicializarVetor()
 {
@@ -23,6 +40,7 @@ void inicializarVetor()
 
 void gerarVetorAleatorio()
 {
+	startWatch();
 	printf("Gerando vetor aleatório...\n");
 	srand(time(NULL));
 	for (int i = 0; i < qtdNumeros; i++)
@@ -30,6 +48,7 @@ void gerarVetorAleatorio()
 		vetor[i] = rand() % 100;
 		vetorinicial[i] = vetor[i];
 	}
+	stopWatch();
 }
 
 void mostrarLista()
@@ -50,11 +69,23 @@ void mostrarLista()
 		printf("%03d ", vetor[i]);
 	}
 	printf("\n\n");
+	printf("Duração: %lu ns\n\n",nanoSecs);
+
+
+}
+
+void cls()
+{
+#ifdef linux
+	system("clear");
+#else
+	system("cls");
+#endif
 }
 
 void mostrarMenu()
 {
-	system("cls");
+	cls();
 	printf("*************************************************\n");
 	printf("* ROTINAS DE ORDENAÇÃO                          *\n");
 	printf("*************************************************\n");
@@ -74,6 +105,7 @@ void Trocar(int *i1, int *i2)
 
 int classificarBubbleSort()
 {
+	startWatch();
 	qtd = 0;
 	int trocado;
 	do
@@ -89,12 +121,13 @@ int classificarBubbleSort()
 			qtd++;
 		}
 	} while (trocado == 1);
-
+stopWatch();
 	return 1;
 }
 
 int classificarSelectionSort()
 {
+	startWatch();
 	qtd = 0;
 	int i, j, min, aux;
 	for (i = 0; i < qtdNumeros - 1; i++)
@@ -113,6 +146,7 @@ int classificarSelectionSort()
 			Trocar(&vetor[i], &vetor[min]);
 		}
 	}
+	stopWatch();
 	return 1;
 }
 
